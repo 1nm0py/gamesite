@@ -94,22 +94,24 @@ function App() {
 
 
   return (
-    <main className="App">
-      <h1 className='header'>Magic Match</h1>
-      <button onClick={shuffleCards}>New Game</button>
-      <div className='card-grid'>
-        {cards.map((card => {
-          return <SingleCard
-            key={card.id}
-            card={card}
-            handleChoice={handleChoice}
-            flipped={card === choiceOne || card === choiceTwo || card.matched}
-            disabled={disabled}
-          />
-        }))}
-      </div>
-      <p className='turns'>Turns: {turns}</p>
-    </main>
+    <div className="all">
+      <main className="App">
+        <h1 className='header'>Magic Match</h1>
+        <button onClick={shuffleCards}>New Game</button>
+        <div className='card-grid'>
+          {cards.map((card => {
+            return <SingleCard
+              key={card.id}
+              card={card}
+              handleChoice={handleChoice}
+              flipped={card === choiceOne || card === choiceTwo || card.matched}
+              disabled={disabled}
+            />
+          }))}
+        </div>
+        <p className='turns'>Turns: {turns}</p>
+      </main>
+    </div>
   )
 }
 
